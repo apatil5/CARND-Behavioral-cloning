@@ -1,6 +1,6 @@
 # *Behavioral Cloning Project**
 
-The goals / steps of this project are the following:
+The goals of this project are the following:
 * Use the simulator to collect data of good driving behavior
 * Build, a convolution neural network in Keras that predicts steering angles from images
 * Train and validate the model with a training and validation set
@@ -17,30 +17,6 @@ The goals / steps of this project are the following:
 [image5]: ./examples/center_flip.jpg "flipped image 1"
 [image6]: ./examples/center_1_flip.jpg "flipped image 2"
 
-## Rubric Points
-### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/432/view) individually and describe how I addressed each point in my implementation.  
-
----
-### Files Submitted & Code Quality
-
-#### 1. Submission includes all required files and can be used to run the simulator in autonomous mode
-
-My project includes the following files:
-* model.py containing the script to create and train the model
-* drive.py for driving the car in autonomous mode
-* model.h5 containing a trained convolution neural network 
-* writeup_report.md or writeup_report.pdf summarizing the 
-* Video file runl.mp4 of Autonomous driving on Track 1
-
-#### 2. Submission includes functional code
-Using the Udacity provided simulator and my drive.py file, the car can be driven autonomously around the track by executing 
-```sh
-python drive.py model.h5
-```
-
-#### 3. Submission code is usable and readable
-
-The model.py file contains the code for training and saving the convolution neural network. The file shows the pipeline I used for training and validating the model, and it contains comments to explain how the code works.
 
 ### Model Architecture and Training Strategy
 
@@ -79,33 +55,27 @@ At the end, the vehicle is able to drive autonomously mostly in the center of th
 The final model architecture (model.py lines 61-83) consisted of a convolution neural network with the following Keras layers and layer sizes :
 
 
-| Kweras Layer    		|           Description     					| 
-|:---------------------:|:---------------------------------------------:| 
-| Input         		| 160x320x3 RGB image  							|
-| Cropping2D    		| 70x320x3 RGB image   							|
-| Normalization 		|  About zero       							|
-
-| Convolution2D 5x5x36  | 2x2 stride, valid padding                 	|
-| RELU					|												|
-
-| Convolution2D 5x5x48  | 2x2 stride, valid padding                     |
-| RELU					|												|
-
-| Convolution2D 5x5x48  | 2x2 stride, valid padding                     |
-| RELU					|												|
-
-| Convolution2D 3x3x64  | valid padding, outputs                        |
-| RELU					|												|
-
-| Convolution2D 3x3x64  | valid padding, outputs                        |
-| RELU					|												|
-| Dropout 50%           |												|
-
-| Flatten				| output 2000									|
-| Fully connected		| 2000 input, output 120 						|
-| Fully connected		| 120 input, output 50							|
-| Fully connected		| 120 input, output 50							|
-| Fully connected		| 50 input, output 1							|
+| Keras Layer    	      |           Description    					| 
+|:-----------------:    |:---------------------------------:| 
+| Input         		    | 160x320x3 RGB image  							|
+| Cropping2D    		    | 70x320x3 RGB image   							|
+| Normalization 		    |  About zero       			  				|
+| Convolution2D 5x5x36  | 2x2 stride, valid padding        	|
+| RELU					        |												            |
+| Convolution2D 5x5x48  | 2x2 stride, valid padding         |
+| RELU					        |												            |
+| Convolution2D 5x5x48  | 2x2 stride, valid padding         |
+| RELU					        | 												          |
+| Convolution2D 3x3x64  | valid padding, outputs            |
+| RELU		         			|	            											|
+| Convolution2D 3x3x64  | valid padding, outputs            |
+| RELU			         		|			            									|
+| Dropout 50%           |									            			|
+| Flatten				        | output 2000							          |
+| Fully connected		    | 2000 input, output 120 						|
+| Fully connected		    | 120 input, output 50							|
+| Fully connected		    | 120 input, output 50							|
+| Fully connected		    | 50 input, output 1	  						|
 
 
 #### 3. Creation of the Training Set & Training Process
@@ -128,6 +98,6 @@ I flipped images and angles to augment data and generalize the learning. For exa
 
 After the collection process, I had 28170 number of data points. I then preprocessed this data by cropping off the useless pixels. The data is then normalized about zero.
 
-I then randomly shuffled the data set and put 20% of the data into a validation set. 
+I then randomly shuffled the data set and used 20% of the data as validation set. 
 
 I used this training data for training the model. The validation set helped determine if the model was over or under fitting. The large and quality data set ensured to achieve desired performance level and training/validation loss < 2 %. epochs was set equal to 1.
