@@ -1,4 +1,3 @@
-![](runl.mp4)
 # *Behavioral Cloning Project**
 
 The goals of this project are the following:
@@ -83,18 +82,18 @@ The final model architecture (model.py lines 61-83) consisted of a convolution n
 
 I went through all the sample data images provided in the repository and trained the model. The sample images are sufficient to run the car and keep it on the track until a sharp turn appears. The response was good but performance had to be improved around the sharp truns.
 
-![Center Camera sample image][image1]
+![](center.jpg)
 
-Further I t recorded the vehicle recovering from the sides of the road back to center. I refrained from collecting redundant data as it sometimes detriorate the performance. 
+Further I recorded how the vehicle recovered from the sides of the road back to center. I refrained from collecting redundant data as it sometimes detriorate the performance. 
 
-![Center Camera train image][image2]
-![left Camera train image][image3]
-![right Camera train image][image4]
+![](left_train.jpg)
+![](center_train.jpg)
+![](right_train.jpg)
 
 I flipped images and angles to augment data and generalize the learning. For example, here is an image that has then been flipped:
 
-![flipped image 1][image6]
-![flipped image 2][image7]
+![][center_flip.jpg]
+![][center_1_flip.jpg]
 
 
 After the collection process, I had 28170 number of data points. I then preprocessed this data by cropping off the useless pixels. The data is then normalized about zero.
