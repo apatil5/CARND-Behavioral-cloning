@@ -92,8 +92,8 @@ Further I recorded how the vehicle recovered from the sides of the road back to 
 
 I flipped images and angles to augment data and generalize the learning. For example, here is an image that has then been flipped:
 
-![][center_flip.jpg]
-![][center_1_flip.jpg]
+![](center_flip.jpg)
+![](center_1_flip.jpg)
 
 
 After the collection process, I had 28170 number of data points. I then preprocessed this data by cropping off the useless pixels. The data is then normalized about zero.
