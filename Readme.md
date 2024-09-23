@@ -74,8 +74,8 @@ The final model architecture (model.py lines 61-83) consisted of a convolution n
 | Flatten				        | output 2000							          |
 | Fully connected		    | 2000 input, output 120 						|
 | Fully connected		    | 120 input, output 50							|
-| Fully connected		    | 120 input, output 50							|
-| Fully connected		    | 50 input, output 1	  						|
+| Fully connected		    | 50 input, output 10							|
+| Fully connected		    | 10 input, output 1	  						|
 
 
 #### 3. Creation of the Training Set & Training Process
